@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 const api_name = '/eduservice/edu-teacher'
 export default {
-
+// 分页查询
   getPageList(page, limit, searchObj) {
     return request({
       url: `${api_name}/${page}/${limit}`,
@@ -38,6 +38,13 @@ export default {
       url: `${api_name}/${teacher.id}`,
       method: 'put',
       data: teacher
+    })
+  },
+  // 查询所有讲师
+  getList() {
+    return request({
+      url: `${api_name}/list`,
+      method: 'get'
     })
   }
 }
