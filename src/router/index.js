@@ -129,6 +129,29 @@ export const constantRouterMap = [
         component: () => import('@/views/edu/course/publish'),
         meta: { title: '发布课程', noCache: true },
         hidden: true
+      },
+      {
+        path: 'publish/:id',
+        name: 'EduCoursePublishEdit',
+        component: () => import('@/views/edu/course/publish'),
+        meta: { title: '发布课程', noCache: true },
+        hidden: true
+      }
+    ]
+  },
+  // 用户管理
+  {
+    path: '/shop/user',
+    component: Layout,
+    redirect: '/edu/shop/list',
+    name: 'user',
+    meta: { title: '用户管理', icon: 'nested' },
+    children: [
+      {
+        path: 'list',
+        name: 'UserList',
+        component: () => import('@/views/edu/shop/list'),
+        meta: { title: '用户管理列表' }
       }
     ]
   },
